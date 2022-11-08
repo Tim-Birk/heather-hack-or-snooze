@@ -87,8 +87,10 @@ function putFavoriteStoriesOnPage() {
 
     $favoriteStoriesList.append($favorite);
   }
-
-  $favoriteStoriesList.show();
+  
+  if ($favoriteStoriesList[0].children[0] === undefined) {
+    $("p").text("No Favorites Added!");
+  }
 }
 
 // Returns true or false depending on if story is/isn't in favorites array and if user is/isn't logged in
@@ -120,5 +122,7 @@ function putMyStoriesOnPage() {
     $myStoriesList.append($myStory);
   }
 
-  $myStoriesList.show();
+  if ($myStoriesList[0].children[0] === undefined) {
+    $("span").text("No stories added by user yet!");
+  }
 }

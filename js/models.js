@@ -305,6 +305,9 @@ class User {
         { ...updatedUser, ownStories: updatedUser.stories },
         currentUser.loginToken
       );
+
+      // In case the user is viewing the favorites list at the time they unfavorite a story, rerender the favorites list to remove that story
+      putFavoriteStoriesOnPage();
     }
     return currentUser.favorites;
   }
