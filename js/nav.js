@@ -73,6 +73,7 @@ $navSubmit.on("click", navSubmitClick);
 
 $("nav").on("click", "#nav-favorites", function (evt) {
   hidePageComponents();
+  $favoriteStoriesList.show();
   putFavoriteStoriesOnPage();
   $myStoriesList.empty();
   $("span").text("");
@@ -81,15 +82,13 @@ $("nav").on("click", "#nav-favorites", function (evt) {
   $("#label-username").text(``);
   $("#label-accountCreated").text(``);
   $storyForm.hide();
-  if ($favoriteStoriesList[0].children[0] === undefined) {
-    $("p").text("No Favorites Added!");
-  }
 });
 
 // when a user clicks 'my stories' in the nav bar, show list of stories submitted
 
 $("nav").on("click", "#nav-myStories", function (evt) {
   hidePageComponents();
+  $myStoriesList.show();
   putMyStoriesOnPage();
   $favoriteStoriesList.hide();
   $("p").text("");
@@ -98,9 +97,6 @@ $("nav").on("click", "#nav-myStories", function (evt) {
   $("#label-name").text(``);
   $("#label-username").text(``);
   $("#label-accountCreated").text(``);
-  if ($myStoriesList[0].children[0] === undefined) {
-    $("span").text("No stories added by user yet!");
-  }
 });
 
 // when a user clicks on username in the nav bar, show user profile information

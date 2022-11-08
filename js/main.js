@@ -27,7 +27,7 @@ const $navMyStories = $("#nav-myStories");
  */
 
 function hidePageComponents() {
-  const components = [$allStoriesList, $loginForm, $signupForm];
+  const components = [$allStoriesList, $loginForm, $signupForm, $favoriteStoriesList, $myStoriesList];
   components.forEach((c) => c.hide());
 }
 
